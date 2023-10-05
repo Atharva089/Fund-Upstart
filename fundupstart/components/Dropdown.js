@@ -1,6 +1,6 @@
 // pages/index.js
-"use client";
-import React, { Component } from "react";
+"use client"
+import React, { Component } from 'react';
 
 class Dropdown extends Component {
   constructor(props) {
@@ -26,9 +26,7 @@ class Dropdown extends Component {
           value={selectedOption}
           onChange={(e) => this.handleSelect(e.target.value)}
         >
-          <option value="" disabled>
-            Select an option
-          </option>
+          <option value="" disabled>Select an option</option>
           {options.map((option, index) => (
             <option key={index} value={option.value}>
               {option.label}
@@ -47,14 +45,14 @@ class HomePage extends Component {
   }
 
   handleOptionSelect(selectedOption) {
-    console.log("Selected option:", selectedOption);
+    console.log('Selected option:', selectedOption);
   }
 
   render() {
     const options = [
-      { label: "Edu-TECH", value: "option1" },
-      { label: "Pharma", value: "option2" },
-      { label: "Agro", value: "option3" },
+      { label: 'Edu-TECH', value: 'option1' },
+      { label: 'Pharma', value: 'option2' },
+      { label: 'Agro', value: 'option3' },
     ];
 
     return (
