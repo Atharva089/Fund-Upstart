@@ -1,16 +1,8 @@
 import Login from "@/components/Login";
 import { useRouter } from "next/navigation";
-import Forinv from "./Forinv";
 
 const login = () => {
-  return (
-    <>
-    {/* <Forinv/> */}
-    <Login />
-    </>
-    
-     )
+  return <Login />;
 };
 
 export default login;
-

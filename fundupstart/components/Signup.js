@@ -168,14 +168,7 @@ const SignupPage = () => {
                     onChange={(e) => setStartupPhone(e.target.value)}
                   />
                 </div>
-                <div className="flex flex-col mb-4">
-                  <label>Startup Legal Name:</label>
-                  <input
-                    type="text"
-                    value={startupLegalName}
-                    onChange={(e) => setStartupLegalName(e.target.value)}
-                  />
-                </div>
+
                 <div className="flex flex-col mb-4">
                   <label>
                     Do you have assets worth over INR 2 cr apart from your
