@@ -1,166 +1,216 @@
-import React from "react";
+"use client";
+import { useState } from "react";
 
-const Signup = () => {
+const SignupPage = () => {
+  // Investor form state
+  const [investorFirstName, setInvestorFirstName] = useState("");
+  const [investorLastName, setInvestorLastName] = useState("");
+  const [investorEmail, setInvestorEmail] = useState("");
+  const [investorPhone, setInvestorPhone] = useState("");
+  const [investorType, setInvestorType] = useState("");
+  const [investorLegalName, setInvestorLegalName] = useState("");
+  const [investorHasAssets, setInvestorHasAssets] = useState("");
+
+  // Startup form state
+  const [startupName, setStartupName] = useState("");
+  const [startupEmail, setStartupEmail] = useState("");
+  const [startupPhone, setStartupPhone] = useState("");
+  const [startupLegalName, setStartupLegalName] = useState("");
+  const [startupHasAssets, setStartupHasAssets] = useState("");
+
+  // Handler for investor form submission
+  const handleInvestorSignup = () => {
+    // Handle the investor signup form submission here
+    console.log("Investor Form submitted");
+  };
+
+  // Handler for startup form submission
+  const handleStartupSignup = () => {
+    // Handle the startup signup form submission here
+    console.log("Startup Form submitted");
+  };
+
   return (
     <div>
-      <section className="text-gray-600 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">
-              SIGNUP
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-              Signup on FUND UPSTART please!
-            </p>
-          </div>
-          <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <div className="flex flex-wrap -m-2">
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Name
-                  </label>
+      <section className="text-gray-1000 body-font">
+        <div className="container px-5 py-24 mx-auto flex flex-wrap justify-between items-center">
+          <div className="lg:w-2/5 md:w-1/2 sm:w-full md:pr-16 lg:pr-0 pr-0 mb-8">
+            <div className="bg-gray-200 p-8 rounded-lg shadow-md">
+              <h1 className="title-font font-medium text-3xl text-gray-900 mb-8">
+                Signup Page - Investor
+              </h1>
+              <form onSubmit={handleInvestorSignup}>
+                {/* Investor signup fields */}
+                <div className="flex flex-col mb-4">
+                  <label>Startup Legal Name:</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={startupLegalName}
+                    onChange={(e) => setStartupLegalName(e.target.value)}
                   />
                 </div>
-              </div>
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="email"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Email
-                  </label>
+                <div className="flex flex-col mb-4">
+                  <label>First Name:</label>
+                  <input
+                    type="text"
+                    value={investorFirstName}
+                    onChange={(e) => setInvestorFirstName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Last Name:</label>
+                  <input
+                    type="text"
+                    value={investorLastName}
+                    onChange={(e) => setInvestorLastName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Email:</label>
                   <input
                     type="email"
-                    id="email"
-                    name="email"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={investorEmail}
+                    onChange={(e) => setInvestorEmail(e.target.value)}
                   />
                 </div>
-              </div>
-
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="leading-7 text-sm text-gray-600"
+                <div className="flex flex-col mb-4">
+                  <label>Phone:</label>
+                  <input
+                    type="tel"
+                    value={investorPhone}
+                    onChange={(e) => setInvestorPhone(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>What will you be investing as?</label>
+                  <select
+                    value={investorType}
+                    onChange={(e) => setInvestorType(e.target.value)}
                   >
-                    Name
-                  </label>
+                    <option value="">Select</option>
+                    <option value="Individual">Individual</option>
+                    <option value="Firm">Firm</option>
+                  </select>
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Individual's/Firm's Legal Name:</label>
                   <input
                     type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                    value={investorLegalName}
+                    onChange={(e) => setInvestorLegalName(e.target.value)}
                   />
                 </div>
-              </div>
-
-              <div className="p-2 w-1/2">
-                <div className="relative">
-                  <label
-                    htmlFor="name"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Name
+                <div className="flex flex-col mb-4">
+                  <label>
+                    Do you have assets worth over INR 2 cr apart from your
+                    primary residence?
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-                  />
+                  <div>
+                    <input
+                      type="radio"
+                      id="investor-yes"
+                      name="investorHasAssets"
+                      value="Yes"
+                      checked={investorHasAssets === "Yes"}
+                      onChange={() => setInvestorHasAssets("Yes")}
+                    />
+                    <label htmlFor="investor-yes">Yes</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="investor-no"
+                      name="investorHasAssets"
+                      value="No"
+                      checked={investorHasAssets === "No"}
+                      onChange={() => setInvestorHasAssets("No")}
+                    />
+                    <label htmlFor="investor-no">No</label>
+                  </div>
                 </div>
-              </div>
-
-              <div className="p-2 w-full">
-                <div className="relative">
-                  <label
-                    htmlFor="message"
-                    className="leading-7 text-sm text-gray-600"
-                  >
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
-                    defaultValue={""}
-                  />
-                </div>
-              </div>
-              <div className="p-2 w-full">
-                <button className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                  Signup
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4"
+                  type="submit"
+                >
+                  Sign Up as Investor
                 </button>
-              </div>
-              <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-                <a className="text-indigo-500"></a>
-                <br />
-                <b> FUND UPSTART </b>
-                <p className="leading-normal my-5">all rights reserved ✔</p>
-                <span className="inline-flex">
-                  <a className="text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect width={20} height={20} x={2} y={2} rx={5} ry={5} />
-                      <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
-                    </svg>
-                  </a>
-                  <a className="ml-4 text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
-                    </svg>
-                  </a>
-                </span>
-              </div>
+              </form>
+            </div>
+          </div>
+          <div className="lg:w-2/5 md:w-1/2 sm:w-full md:pl-16 lg:pl-0 pl-0 mb-8">
+            <div className="bg-gray-200 p-8 rounded-lg shadow-md">
+              <h1 className="title-font font-medium text-3xl text-gray-900 mb-4">
+                Signup Page - Startup
+              </h1>
+              <form onSubmit={handleStartupSignup}>
+                {/* Startup signup fields */}
+                <div className="flex flex-col mb-4">
+                  <label>Startup Name:</label>
+                  <input
+                    type="text"
+                    value={startupName}
+                    onChange={(e) => setStartupName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Email:</label>
+                  <input
+                    type="email"
+                    value={startupEmail}
+                    onChange={(e) => setStartupEmail(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Phone:</label>
+                  <input
+                    type="tel"
+                    value={startupPhone}
+                    onChange={(e) => setStartupPhone(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Startup Legal Name:</label>
+                  <input
+                    type="text"
+                    value={startupLegalName}
+                    onChange={(e) => setStartupLegalName(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>
+                    Do you have assets worth over INR 2 cr apart from your
+                    primary residence?
+                  </label>
+                  <div>
+                    <input
+                      type="radio"
+                      id="startup-yes"
+                      name="startupHasAssets"
+                      value="Yes"
+                      checked={startupHasAssets === "Yes"}
+                      onChange={() => setStartupHasAssets("Yes")}
+                    />
+                    <label htmlFor="startup-yes">Yes</label>
+                  </div>
+                  <div>
+                    <input
+                      type="radio"
+                      id="startup-no"
+                      name="startupHasAssets"
+                      value="No"
+                      checked={startupHasAssets === "No"}
+                      onChange={() => setStartupHasAssets("No")}
+                    />
+                    <label htmlFor="startup-no">No</label>
+                  </div>
+                </div>
+                <button
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4"
+                  type="submit"
+                >
+                  Sign Up as Startup
+                </button>
+              </form>
             </div>
           </div>
         </div>
@@ -169,4 +219,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default SignupPage;

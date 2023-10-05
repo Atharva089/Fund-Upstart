@@ -1,3 +1,10 @@
+import Details from "./Details";
+
 export default function AboutUs() {
-  return <div>This is the about us page</div>;
-}
+    return (
+    <>
+    <Details/>
+    </>
+     )
+  }
+  
