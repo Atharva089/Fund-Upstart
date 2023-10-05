@@ -97,7 +97,7 @@
 
 // export default SignupPage;
 
-import Signup from "@/components/Signup";
+import Signup from "@/components/signup";
 import { useRouter } from "next/navigation";
 
 const signup = () => {

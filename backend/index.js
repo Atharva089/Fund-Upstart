@@ -51,6 +51,7 @@ app.post('/signupstartup', (req, res) => {
     const password = req.body.startupPassword;
     // console.log(legalname, firstname, lastname, email, phone, password, startuptype, startupname, username, password);
     const user = new User( {usertype: usertype, startupname: startupname, email: email, phone: phone, username: username, password: password   } )
+    console.log(usertype, email, phone, startupname, username, password);
     user.save().then(() => console.log('User created'));
     
     res.redirect('http://localhost:3000/login');

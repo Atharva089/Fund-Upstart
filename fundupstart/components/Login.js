@@ -94,7 +94,7 @@ const Login = () => {
             </p>
           </div>
 
-          <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+          <form action="http://localhost:3004/login" method="post" className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
               Login
             </h2>
@@ -155,7 +155,7 @@ const Login = () => {
             <p className="text-xs text-gray-500 mt-3">
               Login into our system and explore endless opportunities 🎉
             </p>
-          </div>
+          </form>
         </div>
       </section>
     </div>

@@ -14,7 +14,7 @@ const Img = () => {
             transform: "translate(-50%, -50%)",
           }}
         >
-          SEE PLANS
+      
         </button>
       </div>
     </section>
