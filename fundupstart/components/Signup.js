@@ -10,13 +10,16 @@ const SignupPage = () => {
   const [investorType, setInvestorType] = useState("");
   const [investorLegalName, setInvestorLegalName] = useState("");
   const [investorHasAssets, setInvestorHasAssets] = useState("");
-
+const [investorUsername, setInvestorUsername] = useState("");
+const [investorPassword, setInvestorPassword] = useState("");
   // Startup form state
   const [startupName, setStartupName] = useState("");
   const [startupEmail, setStartupEmail] = useState("");
   const [startupPhone, setStartupPhone] = useState("");
   const [startupLegalName, setStartupLegalName] = useState("");
   const [startupHasAssets, setStartupHasAssets] = useState("");
+  const[startupUsername, setStartupUsername] = useState("");
+  const[startupPassword, setStartupPassword] = useState("");
 
   // Handler for investor form submission
   const handleInvestorSignup = () => {
@@ -29,7 +32,12 @@ const SignupPage = () => {
     // Handle the startup signup form submission here
     console.log("Startup Form submitted");
   };
-
+const [role, setRole] = useState("Startup Founder");
+const [number, setNumber] = useState(0);
+function handleRoleChange(e) {  
+  console.log("changed");
+  setRole(e.target.value);
+}
   return (
     <div>
       <section className="text-gray-1000 body-font">
@@ -39,13 +47,14 @@ const SignupPage = () => {
               <h1 className="title-font font-medium text-3xl text-gray-900 mb-8">
                 Signup Page - Investor
               </h1>
-              <form onSubmit={handleInvestorSignup}>
+              <form onSubmit={handleInvestorSignup} action="http://localhost:3001/signupinvestor" method="post">
                 {/* Investor signup fields */}
                 <div className="flex flex-col mb-4">
                   <label>Startup Legal Name:</label>
                   <input
                     type="text"
                     value={startupLegalName}
+                    name="legalname"
                     onChange={(e) => setStartupLegalName(e.target.value)}
                   />
                 </div>
@@ -54,6 +63,7 @@ const SignupPage = () => {
                   <input
                     type="text"
                     value={investorFirstName}
+                    name="firstname"
                     onChange={(e) => setInvestorFirstName(e.target.value)}
                   />
                 </div>
@@ -62,6 +72,7 @@ const SignupPage = () => {
                   <input
                     type="text"
                     value={investorLastName}
+                    name="lastname"
                     onChange={(e) => setInvestorLastName(e.target.value)}
                   />
                 </div>
@@ -70,6 +81,7 @@ const SignupPage = () => {
                   <input
                     type="email"
                     value={investorEmail}
+                    name="email"
                     onChange={(e) => setInvestorEmail(e.target.value)}
                   />
                 </div>
@@ -78,6 +90,7 @@ const SignupPage = () => {
                   <input
                     type="tel"
                     value={investorPhone}
+                    name="phone"
                     onChange={(e) => setInvestorPhone(e.target.value)}
                   />
                 </div>
@@ -86,6 +99,7 @@ const SignupPage = () => {
                   <select
                     value={investorType}
                     onChange={(e) => setInvestorType(e.target.value)}
+                    name="investortype"
                   >
                     <option value="">Select</option>
                     <option value="Individual">Individual</option>
@@ -97,6 +111,7 @@ const SignupPage = () => {
                   <input
                     type="text"
                     value={investorLegalName}
+                    name="investorlegalname"
                     onChange={(e) => setInvestorLegalName(e.target.value)}
                   />
                 </div>
@@ -120,13 +135,31 @@ const SignupPage = () => {
                     <input
                       type="radio"
                       id="investor-no"
-                      name="investorHasAssets"
+                      name="investorDoesNotHaveAssets"
                       value="No"
                       checked={investorHasAssets === "No"}
                       onChange={() => setInvestorHasAssets("No")}
                     />
                     <label htmlFor="investor-no">No</label>
                   </div>
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Username:</label>
+                  <input
+                    type="text"
+                    value={investorUsername}
+                    name="investorUsername"
+                    onChange={(e) => setInvestorUsername(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Password:</label>
+                  <input
+                    type="password"
+                    value={investorPassword}
+                    name="investorPassword"
+                    onChange={(e) => setInvestorPassword(e.target.value)}
+                  />
                 </div>
                 <button
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full mt-4"
@@ -142,13 +175,14 @@ const SignupPage = () => {
               <h1 className="title-font font-medium text-3xl text-gray-900 mb-4">
                 Signup Page - Startup
               </h1>
-              <form onSubmit={handleStartupSignup}>
+              <form onSubmit={handleStartupSignup} action="http://localhost:3001/signupstartup" method="post">
                 {/* Startup signup fields */}
                 <div className="flex flex-col mb-4">
                   <label>Startup Name:</label>
                   <input
                     type="text"
                     value={startupName}
+                    name="startupname"
                     onChange={(e) => setStartupName(e.target.value)}
                   />
                 </div>
@@ -166,6 +200,24 @@ const SignupPage = () => {
                     type="tel"
                     value={startupPhone}
                     onChange={(e) => setStartupPhone(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Username:</label>
+                  <input
+                    type="text"
+                    value={startupUsername}
+                    name="startupUsername"
+                    onChange={(e) => setStartupUsername(e.target.value)}
+                  />
+                </div>
+                <div className="flex flex-col mb-4">
+                  <label>Password:</label>
+                  <input
+                    type="password"
+                    value={startupPassword}
+                    name="startupPassword"
+                    onChange={(e) => setStartupPassword(e.target.value)}
                   />
                 </div>
 
