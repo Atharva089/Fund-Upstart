@@ -10,11 +10,7 @@ const stripe = require("stripe")(
   "sk_test_51Nk7IzSEBFON0EJBR49AsAhYc5E9LEGJOwpwDgno7co8msn4NiODrrHQEthWPQfqi07nwBDTE5D30hDq68zluzrJ0046eRH5rQ"
 );
 //new Stripe(process.env.STRIPE_PRIVATE_KEY);
-//
-const storeItems = new Map([
-  [1, { priceInCents: 10000, name: "Learn React Today" }],
-  [2, { priceInCents: 20000, name: "Learn CSS Today" }],
-]);
+const storeItems = new Map([[1, { priceInCents: 10000, name: "PQR Funding" }]]);
 
 export default async (req, res) => {
   try {
