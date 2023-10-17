@@ -7,7 +7,7 @@ const stripePromise = loadStripe(
   "pk_test_51Nk7IzSEBFON0EJBUBJSTdEuns8D1cKcVCeq1927785ziBknaTz0NzNKaEYsHaCdtVwxtHlLViFTezfDzZ7HcLam00YiYPxonf"
 );
 
-export default function Payments() {
+export default function Payment12() {
   const handleButtonClick = async (event) => {
     console.log("clicked" + event);
     const stripe = await stripePromise;
@@ -17,7 +17,7 @@ export default function Payments() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        items: [{ id: 1, quantity: 1 }],
+        items: [{ id: 1, quantity: 10 }],
       }),
     });
     const session = await response.json();

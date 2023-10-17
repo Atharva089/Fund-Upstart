@@ -7,7 +7,7 @@ const stripePromise = loadStripe(
   "pk_test_51Nk7IzSEBFON0EJBUBJSTdEuns8D1cKcVCeq1927785ziBknaTz0NzNKaEYsHaCdtVwxtHlLViFTezfDzZ7HcLam00YiYPxonf"
 );
 
-export default function Payments() {
+export default function Payment1() {
   const handleButtonClick = async (event) => {
     console.log("clicked" + event);
     const stripe = await stripePromise;
