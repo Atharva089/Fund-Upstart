@@ -39,3 +39,5 @@ package-lock.json
 /.vscode/
 
 /server/node_modules
+
+/.env
