@@ -14,10 +14,17 @@
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "mongodb": "5.7",
+<<<<<<< HEAD
     "next": "^14.2.5",
     "postcss": "^8.4.27",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+=======
+    "next": "14.1.1",
+    "postcss": "8.4.27",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+>>>>>>> bb4e2dbd57ef0a2a46ee4ecef1ae7eaa500dab6d
     "react-icons": "^4.10.1",
     "react-youtube": "^10.1.0",
     "stripe": "^13.5.0",
